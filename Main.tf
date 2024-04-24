@@ -26,6 +26,17 @@ resource "azurerm_service_plan" "secondaryasp" {
 }
 
 
+#App Service Plan
+resource "azurerm_service_plan" "thirdasp" {
+  name                = "thethirdasp"
+  resource_group_name = var.resource_group_name
+  location            = var.resource_location
+  os_type             = "Linux"
+  sku_name            = "P1v2"
+}
+
+
+
 
 #Blob Storage
 resource "azurerm_storage_account" "blob" {
