@@ -1,29 +1,43 @@
+#Resource group name for things MOL
 variable "resource_group_name" {
   type        = string
-  default     = "luxonrg"
-  description = "The name of the Resource group"
+  default     = "the-main-rg"
+  description = "Resource Group Name for all resources"
 }
 
-variable "resource_location" {
+#Resource location for all things MOL
+variable "resource_location_eus" {
   type        = string
   default     = "eastus"
-  description = "Location for all resources"
+  description = "Location for all resources in East US"
 }
 
+variable "resource_location_eus2" {
+  type        = string
+  default     = "eastus2"
+  description = "Location for all resources in East US 2"
+}
+
+variable "resource_location_cen" {
+  type        = string
+  default     = "central us"
+  description = "Location for all resources in East US 2"
+}
+
+#Blob storage name
 variable "blob_storage" {
   type        = string
-  default     = "lxnexamplestorage"
-  description = "A place for all things"
+  default     = "themainstorageaccount"
+  description = "Storage account name for blob storage"
 
 }
 
-variable "blob_key" {
-  type        = string
-  default     = "z+KLtfwVfAmh96Pv+XATtp2aWew1yu1ie1hLVZAJP1VBoklwMz2FnWlE+eVTwRIOfhNYzUGDZ/gK+AStPYtVaQ=="
-  description = "blob keys"
+variable "address_space" {
+  type        = list(string)
+  description = "Address space for the virtual network"
 }
 
-variable "service_plan_id" {
-  type    = string
-  default = "/subscriptions/17c87a53-9192-4a5c-b1fc-0bfa7f8e947a/resourceGroups/luxonrg/providers/Microsoft.Web/serverfarms/LuxonAppSP"
+variable "address_prefixes" {
+  type        = list(string)
+  description = "Address prefixes for subnets"
 }
